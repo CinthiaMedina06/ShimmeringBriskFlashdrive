@@ -3,7 +3,6 @@ using static System.Console;
 public class InchesToCentmeters{
   public void InchtoCm () {
     const double INCH = 2.54;
-    //const double CM = 0.393701;
     WriteLine("Enter number of inches to convert to centimeters");
     var x = ReadLine();
 
@@ -11,7 +10,6 @@ public class InchesToCentmeters{
     if (double.TryParse(x, out doubleValue)) {
       var cm = doubleValue * INCH;
       WriteLine("{0}{1}{2}{3}", x, " inches is ", cm, " centimeters");
-     
     }
     else
     {
