@@ -1,8 +1,10 @@
 
 class Program {
   public static void Main () {
-    var message = new TwitterMessage();
-    message.Twitter();
+    var hurrricanesCats = new Hurricane();
+    hurrricanesCats.HurricaneCat();
+    //var message = new TwitterMessage();
+    //message.Twitter();
     //var line = new Lyrics();
     //line.WriteSong();
     //var inches = new InchesToCentmeters();
