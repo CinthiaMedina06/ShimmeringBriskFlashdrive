@@ -1,8 +1,8 @@
 
 class Program {
   public static void Main () {
-    var hurrricanesCats = new Hurricane();
-    hurrricanesCats.HurricaneCat();
+    var perfection = new Perfect();
+    perfection.PerfectNums();
     //var message = new TwitterMessage();
     //message.Twitter();
     //var line = new Lyrics();
