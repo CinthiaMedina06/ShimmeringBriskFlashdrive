@@ -44,15 +44,16 @@ using static System.Console;
           }
       }
 
-    //grand total
+    //Array
      Clear();
-     WriteLine("Total for D: {0}", prevD.ToString("C"));
-     WriteLine("Total for E: {0}", prevE.ToString("C"));
-     WriteLine("Total for F: {0}", prevF.ToString("C"));
+     string[,] names = {{"Danielle", prevD.ToString("C")} , {"Edward", prevE.ToString("C")}, {"Francis", prevF.ToString("C")} };
+         foreach (var name in names){
+           WriteLine(name);
+         }
      WriteLine("------------------------");
      WriteLine("Grand Total: {0}", (prevD + prevE + prevF).ToString("C"));
      WriteLine("------------------------");
-     WriteLine("Highest Sales: {0}", prevD > prevE && prevD > prevF ? "D" : prevE > prevF ? "E" : "F");
+     WriteLine("Highest Sale: {0}", prevD > prevE && prevD > prevF ? "D" : prevE > prevF ? "E" : "F");
      
      HolidayHomes(prevD,prevE,prevF);
 
