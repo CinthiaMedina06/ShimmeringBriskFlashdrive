@@ -1,8 +1,13 @@
 
 class Program {
   public static void Main () {
-    var sales = new HomeSales();
-    sales.HolidayHomes();
+   var  comparission = new TemperatureComparison();
+    comparission.Comparison();
+    
+    //var sales = new HomeSales();
+    //sales.HolidayHomes();
+
+    
     //var perfection = new Perfect();
     //perfection.PerfectNums();
     //var message = new TwitterMessage();

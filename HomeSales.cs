@@ -46,7 +46,12 @@ using static System.Console;
 
     //Array
      Clear();
-     string[,] names = {{"Danielle", prevD.ToString("C")} , {"Edward", prevE.ToString("C")}, {"Francis", prevF.ToString("C")} };
+     string[,] names = {
+           {"Danielle", prevD.ToString("C")}, 
+           {"Edward", prevE.ToString("C")}, 
+           {"Francis", prevF.ToString("C")} 
+       };
+     
          foreach (var name in names){
            WriteLine(name);
          }
