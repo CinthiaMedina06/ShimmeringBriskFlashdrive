@@ -2,8 +2,8 @@ using static System.Console;
 public class GreenvileFair {
   public void GreenvilleRevenue (){
     
-   
-    int revExpected = 10650;
+   var fee = 25;
+    
     WriteLine("\n**********************************");
     WriteLine("* The stars shine in Greenville. *");
     WriteLine("**********************************");
@@ -12,29 +12,31 @@ public class GreenvileFair {
     WriteLine("2. Exit");
     var num = ReadLine();
     if (num == "1"){
+      Clear();
       WriteLine("Enter the number of contestants last year");
       var prevContestants = ReadLine();
       WriteLine("Enter the number of contestants this year");
       var currentContestants = ReadLine();
-      Clear();
+      
+      
       WriteLine("Last year's competition had {0} contestants, and this year's has {1} contestants", prevContestants, currentContestants);
-      WriteLine("Revenue expected this year is {0}", revExpected.ToString("C"));
       
-      if (int.TryParse(prevContestants, out int prevCont) && int.TryParse(currentContestants, out int currentCont))
-      if (prevCont < currentCont){
+      if (double.TryParse(prevContestants, out double prevCont) && double.TryParse(currentContestants, out double currentCont)){
+        double revExpected = currentCont * fee;
+        WriteLine("\nRevenue expected this year is {0}", revExpected.ToString("C"));
         
-        WriteLine("It is true that this year's competition is bigger than last year's.");
+        if (currentCont > prevCont && currentCont < 2 * prevCont)
+
+            WriteLine("\nThe competition is bigger than ever!");
+          
+            else if (currentCont > 2 * prevCont) 
+
+            WriteLine("\nThe competition is more than twice as big this year!");
+        
+        else WriteLine("\nA tighter race this year! Come out and cast your vote!");
+        
+        } 
       }
-      else if (prevCont > currentCont) 
-      
-        WriteLine("It is false that this year's competition is bigger than last year's.");
-       GreenvilleRevenue ();
-    }
     else WriteLine("Thank you for using the Greenville Revenue App, good-bye!");
-    
-   
-    
-    
-   
   }
 }
