@@ -17,24 +17,28 @@ public class GreenvileFair {
       var prevContestants = ReadLine();
       WriteLine("Enter the number of contestants this year");
       var currentContestants = ReadLine();
-      
-      
-      WriteLine("Last year's competition had {0} contestants, and this year's has {1} contestants", prevContestants, currentContestants);
+      Clear();
       
       if (double.TryParse(prevContestants, out double prevCont) && double.TryParse(currentContestants, out double currentCont)){
-        double revExpected = currentCont * fee;
-        WriteLine("\nRevenue expected this year is {0}", revExpected.ToString("C"));
         
-        if (currentCont > prevCont && currentCont < 2 * prevCont)
+        if ((prevCont > 30 || prevCont < 0)|| (currentCont > 30 || currentCont < 0)) {
+          WriteLine("Invalid input. Please enter a number between 0 and 30.");
+          GreenvilleRevenue();
+          }
+          WriteLine("Last year's competition had {0} contestants, and this year's has {1} contestants", prevCont, currentCont);
+          double revExpected = currentCont * fee;
+          WriteLine("\nRevenue expected this year is {0}", revExpected.ToString("C"));
+        
+          if (currentCont > prevCont && currentCont > 2 * prevCont)
 
             WriteLine("\nThe competition is bigger than ever!");
           
-            else if (currentCont > 2 * prevCont) 
+        else if (currentCont >= 2 * prevCont) 
 
             WriteLine("\nThe competition is more than twice as big this year!");
         
-        else WriteLine("\nA tighter race this year! Come out and cast your vote!");
-        
+          else WriteLine("\nA tighter race this year! Come out and cast your vote!");
+           
         } 
       }
     else WriteLine("Thank you for using the Greenville Revenue App, good-bye!");
